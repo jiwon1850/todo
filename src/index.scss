@@ -1,5 +1,14 @@
 body {
   background-color: antiquewhite;
+  padding: 5rem;
+
+  button {
+    border-style: none;
+    background-color: orange;
+    padding: 0.5rem;
+    margin-right : 0.5rem;
+    border-radius: 25%;
+  }
 }
 
 .new-form, .modify-form{
@@ -7,15 +16,26 @@ body {
 
   input {
     padding: 0.5rem;
-  }
-
-  button {
-    padding: 0.5rem;
+    margin-right: 0.5rem;
+    width: 20rem;
+    border-style: none;
+    outline-style: none;
+    border-radius: 10%;
   }
 }
 
 .todo-container {
-  div{
+  width: max-content;
+
+  .todo-item{
     margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  label {
+    font-weight: 600;
+    margin: 0 1rem;
   }
 }

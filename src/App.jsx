@@ -58,11 +58,13 @@ function App() {
         </form>}
       <section className='todo-container'>
         {todos && todos.map((todo, index) => ( 
-          <div key={index}>
+          <div className='todo-item' key={index}>
             <input id={index} type="checkbox" />
             <label htmlFor={index}>{todo}</label>
-            <button onClick={() => handleModify(index)}>수정</button>
-            <button onClick={() => handleDelete(index)}>삭제</button>
+            <div className='btn-container'>
+              <button onClick={() => handleModify(index)}>수정</button>
+              <button onClick={() => handleDelete(index)}>삭제</button>
+            </div>
           </div>
         ))}
       </section>
