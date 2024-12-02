@@ -1,13 +1,12 @@
 import { useState } from 'react';
 
 function App() {
-  const [ todos , setTodos ] = useState(window.localStorage.getItem("todos").split(",").filter(item => item !== "") || [])
+  const [ todos , setTodos ] = useState(window.localStorage.getItem("todos")?.split(",").filter(item => item !== "") || [])
   const [ newTodo, setNewTodo ] = useState("")
   const [ modifiedTodo, setModifiedTodo ] = useState("")
   const [ isModifying, setIsModifying ] = useState(false)
   const [ modifiedIndex, setModifiedIndex ] = useState(null);
 
-  // 새로운 할일 생성
   const handleNewTodoSubmit = (e) => {
     e.preventDefault()
     if(newTodo !== ""){
