@@ -7,7 +7,7 @@ function App() {
   const [ isModifying, setIsModifying ] = useState(false)
   const [ modifiedIndex, setModifiedIndex ] = useState(null);
 
-  const setItemToLocalstorage = (todos) => {
+  const setItemToLocalStorage = (todos) => {
     window.localStorage.setItem("todos", todos)
   }
 
@@ -16,7 +16,7 @@ function App() {
     if(newTodo !== ""){
       const newTodos = [...todos, newTodo]
       setTodos(newTodos)
-      setItemToLocalstorage(newTodos)
+      setItemToLocalStorage(newTodos)
     }
     setNewTodo("")
   }
@@ -28,7 +28,7 @@ function App() {
         return index === modifiedIndex ? modifiedTodo : todo
       })
       setTodos(modifiedTodos)
-      setItemToLocalstorage(modifiedTodo)
+      setItemToLocalStorage(modifiedTodo)
     }
     setIsModifying(false)
     setModifiedIndex(null)
@@ -44,7 +44,7 @@ function App() {
   const handleDelete = (index) => {
     const filteredTodos = todos.filter((_, idx) => idx !== index)
     setTodos(filteredTodos)
-    setItemToLocalstorage(filteredTodos)
+    setItemToLocalStorage(filteredTodos)
   }
 
   return (
